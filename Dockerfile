@@ -1,6 +1,10 @@
 FROM mcr.microsoft.com/dotnet/runtime:7.0
 
-# Install Node.js
-RUN apt-get -y update  \
+# Switch to root user for access to apt-get install
+USER root
+
+# Install Azure CLI
+RUN apt-get -y update \
+    && apt-get install -y curl \
     && curl -sL https://aka.ms/InstallAzureCLIDeb | bash \
     && rm -rf /var/lib/apt/lists/*
