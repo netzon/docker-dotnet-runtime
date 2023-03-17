@@ -30,4 +30,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: netzon/dotnet-runtime:dotnet-7-azure-cli-2.46-${{ github.run_number }}
+          tags: netzon/aspnet-azure:aspnet-7-azure-cli-2.46
